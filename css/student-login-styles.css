@@ -1,4 +1,4 @@
-/* body {
+body {
     margin: 0;
     padding: 0;
     background-color: #141d26;
@@ -21,69 +21,16 @@
 
 h1 {
     margin: 0;
-    padding: 0 0 30px;
+    padding: 0 0 15px;
     text-align: center;
-    font-size: 26px;
-}
-
-.loginbox p {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-}
-
-.loginbox input {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.loginbox input[type="text"], input[type="password"] {
-    border: none;
-    border-bottom: 1px solid #34bab0;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #fff;
-    font-size: 16px;
-}
-
-.loginbox input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #34bab0;
-    color: #fff;
-    font-size: 18px;
-}
-
-.loginbox input[type="submit"]:hover {
-    cursor: pointer;
-    background-color: white;
-    color: #000;
-}
-
-.loginbox a{
-    text-decoration: none;
-    font-size: 15px;
-    line-height: 20px;
-    color: darkgrey;
-}
-
-.loginbox a:hover {
-    color: white;
-}
-
-*/
-
-body {
-    background-color: black;
+    font-size: 28px;
 }
 
 .field {
     position: relative;
     height: 52px;
     width: 100%;
-    max-width: 150px;
+    max-width: 800px;
     color: white;
     overflow: hidden;
 }
@@ -109,7 +56,7 @@ body {
     background-color: inherit;
     left: 0;
     pointer-events: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #34bab0;
 }
 
 .field .label-wrapper::after {
@@ -129,17 +76,52 @@ body {
     bottom: 5px;
     left: 0px;
     transition: all 0.2s ease;
+    font-size: 18px;
 }
 
 .field input:focus + .label-wrapper .label-text,
 
 .field input:valid + .label-wrapper .label-text {
     transform: translateY(-150%);
-    font-size: 12px;
-    color: #ff9950;
+    font-size: 14px;
+    color: #34bab0;
 }
 
 .field input:focus + .label-wrapper::after,
 .field input:valid + .label-wrapper::after {
     transform: translateX(0%);
+}
+
+.loginbox input[type="submit"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #34bab0;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.loginbox input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #000;
+}
+
+.links {
+    margin-top: 25px;
+}
+
+.links a{
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 20px;
+    color: rgb(189, 189, 189);
+    line-height: 35px;
+}
+
+.links a:hover {
+    color: rgb(121,92,178);
+    text-decoration: underline;
 }

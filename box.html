@@ -1,25 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" type ="image/x-icon" href="images/tablogo.png">
-    <title>The Box</title>
-    <link rel="stylesheet" href="css/box-styles.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div class="box">
-      <h2>Code</h2>
-      <textarea spellcheck="false" placeholder="Enter code" required></textarea>
-    </div>
-    <script>
-      const textarea = document.querySelector("textarea");
-      textarea.addEventListener("keyup", e =>{
-        textarea.style.height = "63px";
-        let scHeight = e.target.scrollHeight;
-        textarea.style.height = `${scHeight}px`;
-      });
-    </script>
-
-  </body>
+    <link rel="stylesheet" href="css/box-styles.css">
+    <script src="js/app.js" defer></script>
+    <link rel="shortcut icon" type ="image/x-icon" href="images/tablogo.png">
+    <title>Submission Code</title>
+</head>
+<body>
+    <form action="" id="submitForm">
+        <h1>Enter Submission Code:</h1><br>
+        <div class="container">
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)" autofocus>
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)">
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)">
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)">
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)">
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)">
+            <button id="openModalButton" onclick="openModal()"><a href="#modal-opened" class="link-1" id="modal-closed"> > </a></button>
+            <div class="container2" id="modal-opened">
+                <div class="modal">
+                  <div class="details">
+                    <h1 class="title">Confirm Submission</h1>
+                  </div>
+                  <p class="txt" id="user_text"><b>Name: <br> Course code: <br> Section: <br> Unit number: </b></p>
+                  <a href="#modal-closed" class="link-2"></a>
+                  <div class="banner">
+                    <p>Last submission date: </p>
+                  </div>
+                  <input type="reset" class="btn-false" name="" value="✕">
+                  <input type="submit" class="btn-true" name="" value="✓">
+                </div>
+              </div>              
+        </div>
+    </form>
+</body>
 </html>
