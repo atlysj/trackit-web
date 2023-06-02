@@ -2,7 +2,7 @@ const nums = document.querySelectorAll('.num')
 const form = document.querySelector('form')
 const submit = document.getElementById('submitForm')
 
-const api_link = "https://5late-improved-space-happiness-4ww59xqx9v9hjj7g-31475.preview.app.github.dev"
+const api_link = "http://localhost:31475"
 
 let code = []
 
@@ -35,9 +35,8 @@ nums.forEach((num, index) => {
 
 
 submit.addEventListener("submit", (e) => {
-    e.preventDefault()
-    openModal()
     runPostJson()
+    e.preventDefault()
 })
 
 function runPostJson(){
@@ -57,23 +56,20 @@ async function PostJSON(code){
     const result = await response.json()
 
     console.log(result)
+    openModal(result)
 }
 
-function openModal(){
- // PUT MODAL CODE HERE ???
-if (window.location.toString().includes('#modal-closed')){
-    window.location.replace('#modal-closed','#modal-opened')
-    window.location.href = window.location
-} else {
-    window.location.href += '#modal-opened'
-}
+function openModal(api_data){
+ window.location.href = '#modal-opened'
 
  text = document.getElementById('user_text')
 
- student_name = 'christian'
- course_code = 'MCV4U1'
- section = 1
- unit_number = 2
+ console.log(api_data)
+
+ student_name = api_data.
+ course_code = api_data.course_code
+ section = 
+ unit_number = api_data.unit_number
 
  inline_text = `<b>Name:</b> ${student_name}<br> <b>Course Code:</b> ${course_code}<br> <b>Section:</b> ${section}<br> <b>Unit Number:</b> ${unit_number}`
 
