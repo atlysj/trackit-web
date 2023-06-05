@@ -35,20 +35,34 @@ nums.forEach((num, index) => {
 
 
 submit.addEventListener("submit", (e) => {
-    runPostJson()
+    runPostJson('submit')
     e.preventDefault()
 })
 
-function runPostJson(){
+function runPostJson(confirm_or_submit){
     nums.forEach((num, index) => {
         code.push(num.value)
     })
-    
-    PostJSON(code.join('').toString())
+
+    if (confirm_or_submit == 'confirm'){
+        PostJSONConfirm(code.join('').toString())
+    } else {
+        PostJSONSubmit(code.join('').toString().slice(0,6))
+    }
+}
+async function PostJSONSubmit(code){
+    const response = await fetch(`${api_link}/post/unit/submit/validate`, {
+        method: "POST",
+        body: JSON.stringify(code.toString())
+    })
+
+    const result = await response.json()
+
+    console.log(result)
 }
 
-async function PostJSON(code){
-    const response = await fetch(`${api_link}/post/unit/submit/validate`, {
+async function PostJSONConfirm(code){
+    const response = await fetch(`${api_link}/post/unit/submit/confirm`, {
         method: "POST",
         body: JSON.stringify(code.toString())
     })
@@ -66,9 +80,9 @@ function openModal(api_data){
 
  console.log(api_data)
 
- student_name = api_data.
+ student_name = api_data.student_name
  course_code = api_data.course_code
- section = 
+ section = api_data.student_section
  unit_number = api_data.unit_number
 
  inline_text = `<b>Name:</b> ${student_name}<br> <b>Course Code:</b> ${course_code}<br> <b>Section:</b> ${section}<br> <b>Unit Number:</b> ${unit_number}`

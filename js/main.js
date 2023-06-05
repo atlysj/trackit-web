@@ -44,7 +44,7 @@ function fillUnitBox(index, box, current_course){
     if (user_data.data.course_data[current_course].user_course.user_info.units[index].unit_completed) {
         box.innerHTML = "✔️"
     } else {
-        box.innerHTML = "❌"
+        box.innerHTML = ""
     }
 }
 
